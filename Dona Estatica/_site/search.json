@@ -4,7 +4,7 @@
     "href": "exploradonas.html",
     "title": "Donatarias Autorizadas 2024",
     "section": "",
-    "text": "viewof search = Inputs.search(transpose(dona_data),\n{placeholder: \"Buscar Donatarias Autorizadas 2024\"})\n\n\n\n\n\n\n\nInputs.table(search)"
+    "text": "viewof search = Inputs.search(transpose(dona_data),\n{placeholder: \"Buscar Donatarias Autorizadas 2024\"})\n\n\n\n\n\n\n\nInputs.table(search, {\n    width: '100%',            // Make the table width 100% of the available space\n    maxWidth: null,          // Remove any maximum width restriction\n    height: null,            // Allow the height to adjust automatically\n    maxHeight: null,         // Remove any maximum height restriction\n    layout: 'auto',          // Set layout to auto for better responsiveness\n    rows: 11.5               // Keep the row count as per your requirement\n});"
   },
   {
     "objectID": "tlali_poster.html#clabe-012180001189316234",
@@ -53,7 +53,7 @@
     "href": "index.html#apoya-a-la-poblacion-afectada-por-el-huracan-john-en-la-costa-chica-de-guerrero-y-oaxaca",
     "title": "Dona Fácil",
     "section": "Apoya a la poblacion afectada por el Huracan John en la Costa Chica de Guerrero y Oaxaca",
-    "text": "Apoya a la poblacion afectada por el Huracan John en la Costa Chica de Guerrero y Oaxaca\n\nPuedes donar por Transferencia Bancaria\n\n\n\n\n\n\nNote\n\n\n\nBanco: BBVA\nCLABE: 012180001189316234\nCuenta: 0118931623\nNombre: Tlali Bienestar y Conservacion A.C\nConcepto: Huracan John"
+    "text": "Apoya a la poblacion afectada por el Huracan John en la Costa Chica de Guerrero y Oaxaca\n\nPuedes donar por Transferencia Bancaria\n\n\n\n\n\n\nNote\n\n\n\nBanco: BBVA\nCLABE: 012180001189316234\nCuenta: 0118931623\nNombre: Tlali Bienestar y Conservacion A.C\nConcepto: Huracan John\n\n\n\n\n\nPoster hecho por Tlali para donativos a causa del huracan john"
   },
   {
     "objectID": "about.html",

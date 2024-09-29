@@ -92,8 +92,7 @@ value_box(
   value = neatIngresosAcumulables,
   showcase = bs_icon("cash-coin"),
   h3("Puedes donar hasta: ", maxDonativos, bs_icon("coin")),
-  p("hit me", bs_icon("suit-spade"))
-)
+  h4("Dona: ", bs_icon("postcard-heart"), a("Huracan John", href = "https://dar4datascience.github.io/Quarto-Dona/tlali_poster.html"),  ", ",   a("Explora Donatarias", href = "https://dar4datascience.github.io/Quarto-Dona/exploradonas.html")))
 ```
 
 
