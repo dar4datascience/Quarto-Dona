@@ -7,32 +7,11 @@
     "text": "viewof search = Inputs.search(transpose(dona_data),\n{placeholder: \"Buscar Donatarias Autorizadas 2024\"})\n\n\n\n\n\n\n\nInputs.table(search, {\n    width: '100%',            // Make the table width 100% of the available space\n    maxWidth: null,          // Remove any maximum width restriction\n    height: null,            // Allow the height to adjust automatically\n    maxHeight: null,         // Remove any maximum height restriction\n    layout: 'auto',          // Set layout to auto for better responsiveness\n    rows: 11.5               // Keep the row count as per your requirement\n});"
   },
   {
-    "objectID": "tlali_poster.html#clabe-012180001189316234",
-    "href": "tlali_poster.html#clabe-012180001189316234",
+    "objectID": "tlali_poster.html#solicita-tu-factura",
+    "href": "tlali_poster.html#solicita-tu-factura",
     "title": "Datos de Transferencia",
-    "section": "CLABE: 012180001189316234",
-    "text": "CLABE: 012180001189316234"
-  },
-  {
-    "objectID": "tlali_poster.html#cuenta-0118931623",
-    "href": "tlali_poster.html#cuenta-0118931623",
-    "title": "Datos de Transferencia",
-    "section": "Cuenta: 0118931623",
-    "text": "Cuenta: 0118931623"
-  },
-  {
-    "objectID": "tlali_poster.html#nombre-tlali-bienestar-y-conservación-a.c",
-    "href": "tlali_poster.html#nombre-tlali-bienestar-y-conservación-a.c",
-    "title": "Datos de Transferencia",
-    "section": "Nombre: Tlali Bienestar y Conservación A.C",
-    "text": "Nombre: Tlali Bienestar y Conservación A.C"
-  },
-  {
-    "objectID": "tlali_poster.html#concepto-huracán-john",
-    "href": "tlali_poster.html#concepto-huracán-john",
-    "title": "Datos de Transferencia",
-    "section": "Concepto: Huracán John",
-    "text": "Concepto: Huracán John"
+    "section": "Solicita tu Factura",
+    "text": "Solicita tu Factura\n\n    \n        Solicita tu factura por Email\n    \n\n\n\n\nPoster hecho por Tlali para donativos a causa del huracan john"
   },
   {
     "objectID": "index.html",
@@ -75,12 +54,5 @@
     "title": "Referencias",
     "section": "Donatarias Autorizadas",
     "text": "Donatarias Autorizadas"
-  },
-  {
-    "objectID": "tlali_poster.html#solicita-tu-factura",
-    "href": "tlali_poster.html#solicita-tu-factura",
-    "title": "Datos de Transferencia",
-    "section": "Solicita tu Factura",
-    "text": "Solicita tu Factura\n\n    \n        Solicita tu factura por Email\n    \n\n\n\n\nPoster hecho por Tlali para donativos a causa del huracan john"
   }
 ]
