@@ -87,3 +87,8 @@ augmented_dona <- zoom_dona |>
     method = 'osm',
     lat = latitude ,
     long = longitude)
+
+# Save to disk
+
+augmented_dona |>
+  write.csv("augmented_donas_2024.csv", row.names = FALSE)

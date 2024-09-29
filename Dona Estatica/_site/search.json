@@ -25,6 +25,20 @@
     "href": "index.html",
     "title": "Dona Estatica",
     "section": "",
-    "text": "This is a Live Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "This is a Live Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\nviewof islands = Inputs.checkbox(\n  [\"Torgersen\", \"Biscoe\", \"Dream\"],\n  {\n    value: [\"Torgersen\", \"Biscoe\"],\n    label: \"Islands:\",\n  }\n)"
+  },
+  {
+    "objectID": "index.html#calculator",
+    "href": "index.html#calculator",
+    "title": "Dona Estatica",
+    "section": "Calculator",
+    "text": "Calculator\n\nviewof periodo = Inputs.radio(\n  [\"Quincenal\", \"Mensual\", \"Anual\"],\n  {\n    value: [\"Torgersen\", \"Biscoe\"],\n    label: \"Periodo:\",\n  }\n)\n\n\n\n\n\n\n\nviewof ganancias = Inputs.text(\n  [\"Quincenal\", \"Mensual\", \"Anual\"],\n  {\n    label: html`&lt;b&gt;Ingresos&lt;/b&gt;`,\n    placeholder: \"Monto, por ejemplo: 15000\",\n    value: \"15000\",\n    submit: true\n  }\n)\n\n\n\n\n\n\nEn donativos a las Donatarias Autorizadas por el SAT, hasta el 7% de los ingresos acumulables del ejercicio fiscal inmediato anterior tratándose de personas físicas.\nif quincenal multiply ganancias by 2 then 12 to get anual if mensual multiply ganancias by 12 to get anual if anual multiply ganancias by 1 to get anual"
+  },
+  {
+    "objectID": "index.html#apoya-a-la-poblacion-afectada-por-el-huracan-john-en-la-costa-chica-de-guerrero-y-oaxaca",
+    "href": "index.html#apoya-a-la-poblacion-afectada-por-el-huracan-john-en-la-costa-chica-de-guerrero-y-oaxaca",
+    "title": "Dona Estatica",
+    "section": "Apoya a la poblacion afectada por el Huracan John en la Costa Chica de Guerrero y Oaxaca",
+    "text": "Apoya a la poblacion afectada por el Huracan John en la Costa Chica de Guerrero y Oaxaca"
   }
 ]
