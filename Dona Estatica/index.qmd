@@ -1,0 +1,17 @@
+---
+title: "Dona Estatica"
+format: live-html
+engine: knitr
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+This is a Live Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+```{webr}
+fit = lm(mpg ~ am, data = mtcars)
+summary(fit)
+plot(fit)
+```

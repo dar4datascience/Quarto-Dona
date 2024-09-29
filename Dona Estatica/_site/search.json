@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Referencias",
+    "section": "",
+    "text": "haz un iframe con el siguietne link: http://omawww.sat.gob.mx/documentossat/Documents/DonativosDeducibles.pdf"
+  },
+  {
+    "objectID": "about.html#donativos-deducibles-de-impuestos-isr",
+    "href": "about.html#donativos-deducibles-de-impuestos-isr",
+    "title": "Referencias",
+    "section": "",
+    "text": "haz un iframe con el siguietne link: http://omawww.sat.gob.mx/documentossat/Documents/DonativosDeducibles.pdf"
+  },
+  {
+    "objectID": "about.html#donatarias-autorizadas",
+    "href": "about.html#donatarias-autorizadas",
+    "title": "Referencias",
+    "section": "Donatarias Autorizadas",
+    "text": "Donatarias Autorizadas"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Dona Estatica",
+    "section": "",
+    "text": "This is a Live Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  }
+]
