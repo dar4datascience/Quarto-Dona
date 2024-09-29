@@ -7,6 +7,34 @@
     "text": "viewof search = Inputs.search(transpose(dona_data),\n{placeholder: \"Buscar Donatarias Autorizadas 2024\"})\n\n\n\n\n\n\n\nInputs.table(search)"
   },
   {
+    "objectID": "tlali_poster.html#clabe-012180001189316234",
+    "href": "tlali_poster.html#clabe-012180001189316234",
+    "title": "Datos de Transferencia",
+    "section": "CLABE: 012180001189316234",
+    "text": "CLABE: 012180001189316234"
+  },
+  {
+    "objectID": "tlali_poster.html#cuenta-0118931623",
+    "href": "tlali_poster.html#cuenta-0118931623",
+    "title": "Datos de Transferencia",
+    "section": "Cuenta: 0118931623",
+    "text": "Cuenta: 0118931623"
+  },
+  {
+    "objectID": "tlali_poster.html#nombre-tlali-bienestar-y-conservación-a.c",
+    "href": "tlali_poster.html#nombre-tlali-bienestar-y-conservación-a.c",
+    "title": "Datos de Transferencia",
+    "section": "Nombre: Tlali Bienestar y Conservación A.C",
+    "text": "Nombre: Tlali Bienestar y Conservación A.C"
+  },
+  {
+    "objectID": "tlali_poster.html#concepto-huracán-john",
+    "href": "tlali_poster.html#concepto-huracán-john",
+    "title": "Datos de Transferencia",
+    "section": "Concepto: Huracán John",
+    "text": "Concepto: Huracán John"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Dona Fácil",
