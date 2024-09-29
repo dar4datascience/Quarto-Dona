@@ -5,15 +5,25 @@ format:
     toc: false
 ---
 
-## Banco: **BBVA**
+### Banco: **BBVA**
 
-## CLABE: **012180001189316234**
+### CLABE: **012180001189316234**
 
-## Cuenta: **0118931623**
+### Cuenta: **0118931623**
 
-## Nombre: **Tlali Bienestar y Conservación A.C**
+### Nombre: **Tlali Bienestar y Conservación A.C**
 
-## Concepto: **Huracán John**
+### Concepto: **Huracán John**
+
+## Solicita tu Factura
+
+```{=html}
+<a href="mailto:tlalibyc.ac@gmail.com?subject=Comprobante%20Donacion%20Por%20Huracan%20John&body=Hola%20adjunto%20comprobante%20de%20donativo!" style="text-decoration: none;">
+    <button style="font-size: 20px; padding: 15px 30px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Solicita tu factura por Email
+    </button>
+</a>
+```
 
 ![Poster hecho por Tlali para donativos a causa del huracan john](images/clipboard-825469681.png)
 
