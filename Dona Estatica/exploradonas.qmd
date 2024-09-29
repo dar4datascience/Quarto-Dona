@@ -1,0 +1,44 @@
+---
+title: "Donatarias Autorizadas 2024"
+---
+
+
+```{r loaddonas}
+#| echo: false
+library(dplyr, warn.conflicts = FALSE)
+
+donas_2024 <- read.csv("../augmented_donas_2024.csv") |> 
+  select(!c(codigo_actividad_o_fin_autorizado,
+         categoria_actividad_o_fin_autorizado)
+  ) |> 
+  relocate(
+    c(pseudo_categoria_actividad_o_fin_autorizado, e_mail),
+    .before = domicilio_fiscal
+  ) |> 
+  rename(
+    "Estado" = entidad_federativa,
+    "Denominación o Razón Social" = denominacion_o_razon_social,
+    "Pseudo Categoría" = pseudo_categoria_actividad_o_fin_autorizado,
+    "Email" = e_mail
+  )
+
+# pseudo_categorias <- donas_2024 |> 
+#   distinct(pseudo_categoria_actividad_o_fin_autorizado) |> 
+#   pull()
+
+#ojs_define(dona_cats = pseudo_categorias)
+ojs_define(dona_data = donas_2024)
+```
+
+```{ojs searchview}
+//| echo: false
+viewof search = Inputs.search(transpose(dona_data),
+{placeholder: "Buscar Donatarias Autorizadas 2024"})
+```
+
+```{ojs tableview}
+//| echo: false
+//| column: page
+
+Inputs.table(search)
+```

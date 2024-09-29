@@ -15,7 +15,8 @@ fetch_donatarias_autorizadas <- function(url, sheet = 1, skip = 31) {
 
 url_donatarias_autorizadas <- "http://omawww.sat.gob.mx/donatariasautorizadas/Paginas/documentos/padron_donatarias/DonatariasAutorizadas2024.xls"
 
-donatarias_autorizadas <- fetch_donatarias_autorizadas(url_donatarias_autorizadas)
+donatarias_autorizadas <- read_xls("DonatariasAutorizadas2024.xls", sheet = 1, skip = 31) |>
+  janitor::clean_names()#fetch_donatarias_autorizadas(url_donatarias_autorizadas)
 
 
 # Clean Up Dataset --------------------------------------------------------
@@ -78,17 +79,94 @@ zoom_dona <- donatarias_autorizadas |>
   ) |>
   select(!actividad_o_fin_autorizado)
 
+zoom_dona |>
+  write.csv("augmented_donas_2024.csv", row.names = FALSE)
+
 
 # Geocode once Cause it takes 4 hours! ------------------------------------
+#FAILS
+# augmented_dona <- zoom_dona |>
+#   geocode(
+#     address = domicilio_fiscal,
+#     method = 'osm',
+#     lat = latitude ,
+#     long = longitude)
 
-augmented_dona <- zoom_dona |>
-  geocode(
-    address = domicilio_fiscal,
-    method = 'osm',
-    lat = latitude ,
-    long = longitude)
 
-# Save to disk
+# Test Leaflet ----------------------------------------------------------
+library(leaflet)
 
-augmented_dona |>
-  write.csv("augmented_donas_2024.csv", row.names = FALSE)
+zoom_dona
+# Example dataset
+states_data <- data.frame(
+  state = c("California", "Texas", "New York", "Florida"),
+  value = c(100, 200, 150, 175)
+)
+
+leaflet() |>
+  addTiles() |>
+  addPolygons(data = states_data, layerId = states_data$state)
+
+
+
+
+# Map ---------------------------------------------------------------------
+library(sf)
+library(ggplot2)
+library(osmdata)
+library(dplyr)
+
+# Define the bounding box for Mexico
+bbox_mexico <- c(-118.5, 14.5, -86.5, 32.5)
+
+# Use the bounding box in the opq function
+mexico_states_query <- opq(bbox = bbox_mexico) %>%
+  add_osm_feature(key = "boundary", value = "administrative") %>%
+  add_osm_feature(key = "admin_level", value = "4")
+
+
+# Get the data
+mexico_states <- osmdata_sf(mexico_states_query) |>
+  purrr::pluck("osm_multipolygons") |> #extract geometry
+  janitor::clean_names() |>
+  select(name,
+         iso3166_2,
+         geometry) |>
+  filter(
+    stringr::str_detect(iso3166_2, "MX")
+  )
+
+gc()
+
+library(plotly)
+base_map <- ggplot(mexico_states) +
+  geom_sf(
+          fill = "lightblue", color = "black") +
+  theme_void() +
+  ggtitle("States of Mexico")
+
+base_map
+
+plotly::ggplotly(base_map)
+
+library(mapview)
+#mapviewOptions(fgb = FALSE) # needed when creating web pages
+
+mexico_states |>
+  select(!iso3166_2) |>
+  mapview(col.regions = sf.colors(32), fgb = FALSE)
+
+library(leaflet)
+
+mexico_states |>
+  select(!iso3166_2) |>
+  leaflet()
+
+|>
+  addPolygons(color = "pink",
+              weight = 1,
+              smoothFactor = 0.5,
+              fillOpacity = 0.5,
+              fillColor = "purple",
+              highlightOptions = highlightOptions(color = "white", weight = 2,
+                                                  bringToFront = TRUE))

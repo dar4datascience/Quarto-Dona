@@ -23,9 +23,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Dona Estatica",
+    "title": "Dona Fácil",
     "section": "",
-    "text": "This is a Live Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\nviewof islands = Inputs.checkbox(\n  [\"Torgersen\", \"Biscoe\", \"Dream\"],\n  {\n    value: [\"Torgersen\", \"Biscoe\"],\n    label: \"Islands:\",\n  }\n)"
+    "text": "En donativos a las Donatarias Autorizadas por el SAT, hasta el 7% de los ingresos acumulables del ejercicio fiscal inmediato anterior tratándose de personas físicas.\n\nviewof periodo = Inputs.radio(\n  [\"Quincenal\", \"Mensual\", \"Anual\"],\n  {\n    value: \"Mensual\",\n    label: html`&lt;b&gt;Periodo:&lt;/b&gt;: `\n  }\n)\n\n\n\n\n\n\n\nviewof ganancias = Inputs.text(\n  {\n    label: html`&lt;b&gt;Ingreso aproximado&lt;/b&gt;: `,\n    placeholder: \"Monto, por ejemplo: 15000\",\n    value: \"15000\",\n    submit: false\n  }\n)\n\n\n\n\n\n\n\nfunction formatCurrency(amount) {\n  return '$' + amount.toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 });\n}\n// Function to calculate annual earnings\nfunction calcularGananciasAnuales(ganancias, periodo) {\n  ganancias = parseFloat(ganancias); // Convert the string to a numeric value\n\n  let annualEarnings;\n  if (periodo === \"Quincenal\") {\n    annualEarnings = ganancias * 2 * 12;\n  } else if (periodo === \"Mensual\") {\n    annualEarnings = ganancias * 12;\n  } else {\n    annualEarnings = ganancias; // Assuming \"Anual\" or other values return the same as ganancias\n  }\n  \n  return annualEarnings;\n}\n\n// Function to calculate maximum allowable donations\nfunction calcularDonativosMaximos(ingresosAcumulables) {\n  // Convert the string to a numeric value\n  ingresosAcumulables = parseFloat(ingresosAcumulables);\n  \n  // Calculate 7% of the accumulated income\n  const maxDonativos = ingresosAcumulables * 0.07;\n  \n  return formatCurrency(maxDonativos); // Format the result as currency\n}\n\ningresosAcumulables = calcularGananciasAnuales(ganancias, periodo)\n\nmaxDonativos = calcularDonativosMaximos(ingresosAcumulables)\n\nneatIngresosAcumulables = formatCurrency(ingresosAcumulables)"
   },
   {
     "objectID": "index.html#calculator",
@@ -37,8 +37,29 @@
   {
     "objectID": "index.html#apoya-a-la-poblacion-afectada-por-el-huracan-john-en-la-costa-chica-de-guerrero-y-oaxaca",
     "href": "index.html#apoya-a-la-poblacion-afectada-por-el-huracan-john-en-la-costa-chica-de-guerrero-y-oaxaca",
-    "title": "Dona Estatica",
+    "title": "Dona Fácil",
     "section": "Apoya a la poblacion afectada por el Huracan John en la Costa Chica de Guerrero y Oaxaca",
-    "text": "Apoya a la poblacion afectada por el Huracan John en la Costa Chica de Guerrero y Oaxaca"
+    "text": "Apoya a la poblacion afectada por el Huracan John en la Costa Chica de Guerrero y Oaxaca\n\nPuedes donar por Transferencia Bancaria\n\n\n\n\n\n\nNote\n\n\n\nBanco: BBVA\nCLABE: 012180001189316234\nCuenta: 0118931623\nNombre: Tlali Bienestar y Conservacion A.C\nConcepto: Huracan John"
+  },
+  {
+    "objectID": "index.html#calcula-hasta-cuanto-puedes-donar",
+    "href": "index.html#calcula-hasta-cuanto-puedes-donar",
+    "title": "Dona Estatica",
+    "section": "Calcula hasta cuanto puedes donar",
+    "text": "Calcula hasta cuanto puedes donar\nEn donativos a las Donatarias Autorizadas por el SAT, hasta el 7% de los ingresos acumulables del ejercicio fiscal inmediato anterior tratándose de personas físicas.\nif quincenal multiply ganancias by 2 then 12 to get anual if mensual multiply ganancias by 12 to get anual if anual multiply ganancias by 1 to get anual\n\nviewof periodo = Inputs.radio(\n  [\"Quincenal\", \"Mensual\", \"Anual\"],\n  {\n    value: [\"Torgersen\", \"Biscoe\"],\n    label: \"Periodo:\",\n  }\n)\n\n\n\n\n\n\n\nviewof ganancias = Inputs.text(\n  [\"Quincenal\", \"Mensual\", \"Anual\"],\n  {\n    label: html`&lt;b&gt;Ingresos&lt;/b&gt;`,\n    placeholder: \"Monto, por ejemplo: 15000\",\n    value: \"15000\",\n    submit: true\n  }\n)"
+  },
+  {
+    "objectID": "exploradonas.html",
+    "href": "exploradonas.html",
+    "title": "Donatarias Autorizadas 2024",
+    "section": "",
+    "text": "viewof search = Inputs.search(transpose(dona_data),\n{placeholder: \"Buscar Donatarias Autorizadas 2024\"})\n\n\n\n\n\n\n\nInputs.table(search)"
+  },
+  {
+    "objectID": "index.html#calcula-hasta-cuánto-puedes-donar-por-año-fiscal",
+    "href": "index.html#calcula-hasta-cuánto-puedes-donar-por-año-fiscal",
+    "title": "Dona Fácil",
+    "section": "",
+    "text": "En donativos a las Donatarias Autorizadas por el SAT, hasta el 7% de los ingresos acumulables del ejercicio fiscal inmediato anterior tratándose de personas físicas.\n\nviewof periodo = Inputs.radio(\n  [\"Quincenal\", \"Mensual\", \"Anual\"],\n  {\n    value: \"Mensual\",\n    label: html`&lt;b&gt;Periodo:&lt;/b&gt;: `\n  }\n)\n\n\n\n\n\n\n\nviewof ganancias = Inputs.text(\n  {\n    label: html`&lt;b&gt;Ingreso aproximado&lt;/b&gt;: `,\n    placeholder: \"Monto, por ejemplo: 15000\",\n    value: \"15000\",\n    submit: false\n  }\n)\n\n\n\n\n\n\n\nfunction formatCurrency(amount) {\n  return '$' + amount.toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 });\n}\n// Function to calculate annual earnings\nfunction calcularGananciasAnuales(ganancias, periodo) {\n  ganancias = parseFloat(ganancias); // Convert the string to a numeric value\n\n  let annualEarnings;\n  if (periodo === \"Quincenal\") {\n    annualEarnings = ganancias * 2 * 12;\n  } else if (periodo === \"Mensual\") {\n    annualEarnings = ganancias * 12;\n  } else {\n    annualEarnings = ganancias; // Assuming \"Anual\" or other values return the same as ganancias\n  }\n  \n  return annualEarnings;\n}\n\n// Function to calculate maximum allowable donations\nfunction calcularDonativosMaximos(ingresosAcumulables) {\n  // Convert the string to a numeric value\n  ingresosAcumulables = parseFloat(ingresosAcumulables);\n  \n  // Calculate 7% of the accumulated income\n  const maxDonativos = ingresosAcumulables * 0.07;\n  \n  return formatCurrency(maxDonativos); // Format the result as currency\n}\n\ningresosAcumulables = calcularGananciasAnuales(ganancias, periodo)\n\nmaxDonativos = calcularDonativosMaximos(ingresosAcumulables)\n\nneatIngresosAcumulables = formatCurrency(ingresosAcumulables)"
   }
 ]

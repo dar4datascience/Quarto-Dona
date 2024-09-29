@@ -2,16 +2,17 @@ project:
   type: website
 
 website:
-  title: "Dona Facil"
+  title: "Dona Fácil"
+  search: false
   navbar:
     left:
       - href: index.qmd
-        text: Home
+      - href: exploradonas.qmd
       - about.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: pulse
     css: styles.css
     toc: true
 

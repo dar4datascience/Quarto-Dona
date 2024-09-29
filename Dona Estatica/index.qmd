@@ -1,47 +1,29 @@
 ---
-title: "Dona Estatica"
-format: live-html
+title: ""
+format: 
+  live-html:
+    theme: pulse
+webr:
+  packages:
+    - bslib
+    - htmltools
+    - bsicons
 engine: knitr
 ---
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
 
-This is a Live Quarto website.
+## Calcula hasta cuánto puedes donar por año fiscal
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{webr}
-fit = lm(mpg ~ am, data = mtcars)
-summary(fit)
-plot(fit)
-```
-
-```{ojs}
-//| echo: false
-viewof islands = Inputs.checkbox(
-  ["Torgersen", "Biscoe", "Dream"],
-  {
-    value: ["Torgersen", "Biscoe"],
-    label: "Islands:",
-  }
-)
-```
-
-```{webr}
-#| input:
-#|   - islands
-islands
-```
-
-## Calculator
+En donativos a las Donatarias Autorizadas por el SAT, hasta el 7% de los ingresos acumulables del ejercicio fiscal inmediato anterior tratándose de personas físicas.
 
 ```{ojs}
 //| echo: false
 viewof periodo = Inputs.radio(
   ["Quincenal", "Mensual", "Anual"],
   {
-    value: ["Torgersen", "Biscoe"],
-    label: "Periodo:",
+    value: "Mensual",
+    label: html`<b>Periodo:</b>: `
   }
 )
 ```
@@ -49,22 +31,90 @@ viewof periodo = Inputs.radio(
 ```{ojs}
 //| echo: false
 viewof ganancias = Inputs.text(
-  ["Quincenal", "Mensual", "Anual"],
   {
-    label: html`<b>Ingresos</b>`,
+    label: html`<b>Ingreso aproximado</b>: `,
     placeholder: "Monto, por ejemplo: 15000",
     value: "15000",
-    submit: true
+    submit: false
   }
 )
 ```
 
-En donativos a las Donatarias Autorizadas por el SAT, hasta el 7% de los ingresos acumulables del ejercicio fiscal inmediato anterior tratándose de personas físicas.
+```{ojs}
+//|  echo: false
+// Function to format a number as currency
+function formatCurrency(amount) {
+  return '$' + amount.toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+// Function to calculate annual earnings
+function calcularGananciasAnuales(ganancias, periodo) {
+  ganancias = parseFloat(ganancias); // Convert the string to a numeric value
 
-if quincenal multiply ganancias by 2 then 12 to get anual if mensual multiply ganancias by 12 to get anual if anual multiply ganancias by 1 to get anual
+  let annualEarnings;
+  if (periodo === "Quincenal") {
+    annualEarnings = ganancias * 2 * 12;
+  } else if (periodo === "Mensual") {
+    annualEarnings = ganancias * 12;
+  } else {
+    annualEarnings = ganancias; // Assuming "Anual" or other values return the same as ganancias
+  }
+  
+  return annualEarnings;
+}
+
+// Function to calculate maximum allowable donations
+function calcularDonativosMaximos(ingresosAcumulables) {
+  // Convert the string to a numeric value
+  ingresosAcumulables = parseFloat(ingresosAcumulables);
+  
+  // Calculate 7% of the accumulated income
+  const maxDonativos = ingresosAcumulables * 0.07;
+  
+  return formatCurrency(maxDonativos); // Format the result as currency
+}
+
+ingresosAcumulables = calcularGananciasAnuales(ganancias, periodo)
+
+maxDonativos = calcularDonativosMaximos(ingresosAcumulables)
+
+neatIngresosAcumulables = formatCurrency(ingresosAcumulables)
+
+```
+
+
+
+```{webr}
+#| input:
+#|   - neatIngresosAcumulables
+#|   - maxDonativos
+value_box(
+  title = "Ingreso Anual",
+  value = neatIngresosAcumulables,
+  showcase = bs_icon("cash-coin"),
+  h3("Puedes donar hasta: ", maxDonativos, bs_icon("coin")),
+  p("hit me", bs_icon("suit-spade"))
+)
+```
+
 
 ## Apoya a la poblacion afectada por el Huracan John en la Costa Chica de Guerrero y Oaxaca
 
+
+### Puedes donar por Transferencia Bancaria
+
+::: {.callout-note}
+**Banco: BBVA**
+
+**CLABE: 012180001189316234**
+
+**Cuenta: 0118931623**
+
+**Nombre: Tlali Bienestar y Conservacion A.C**
+
+**Concepto: Huracan John**
+:::
+
+
+
 ![](images/clipboard-825469681.png)
 
-![](images/clipboard-3726365356.png)
