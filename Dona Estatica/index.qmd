@@ -115,6 +115,5 @@ value_box(
 :::
 
 
-
-![](images/clipboard-825469681.png)
+[![Poster hecho por Tlali para donativos a causa del huracan john](images/clipboard-825469681.png)](https://dar4datascience.github.io/Quarto-Dona/tlali_poster.html)
 

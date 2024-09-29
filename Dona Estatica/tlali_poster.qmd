@@ -1,0 +1,19 @@
+---
+title: "Datos de Transferencia"
+format:
+  html:
+    toc: false
+---
+
+## Banco: **BBVA**
+
+## CLABE: **012180001189316234**
+
+## Cuenta: **0118931623**
+
+## Nombre: **Tlali Bienestar y Conservación A.C**
+
+## Concepto: **Huracán John**
+
+![Poster hecho por Tlali para donativos a causa del huracan john](images/clipboard-825469681.png)
+
