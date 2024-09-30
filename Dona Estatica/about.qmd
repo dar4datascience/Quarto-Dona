@@ -2,13 +2,10 @@
 title: "Referencias"
 ---
 
-## Donativos deducibles de impuestos ISR
-
-haz un iframe con el siguietne link: http://omawww.sat.gob.mx/documentossat/Documents/DonativosDeducibles.pdf
+## [Donativos deducibles de impuestos ISR](http://omawww.sat.gob.mx/documentossat/Documents/DonativosDeducibles.pdf)
 
 <iframe src="http://omawww.sat.gob.mx/documentossat/Documents/DonativosDeducibles.pdf" width="100%" height="500px"></iframe>
 
-## Donatarias Autorizadas
+## [Donatarias Autorizadas](http://omawww.sat.gob.mx/donatariasautorizadas/Paginas/padron_directorio.html)
 
 <iframe src="http://omawww.sat.gob.mx/donatariasautorizadas/Paginas/padron_directorio.html" width="100%" height="500px"></iframe>
-
